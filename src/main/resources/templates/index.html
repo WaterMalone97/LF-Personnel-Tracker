@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LF Personnel Tracker - Home</title>
+    <link rel="stylesheet" th:href="@{'/css/main.css'}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img th:src="@{'images/PSU-learning-factory.jpg'}" alt="Learning Factory Logo" class="logo">
+            <ul class="nav">
+                <li><a th:href="${'/'}">Home</a></li>
+                <li><a th:href="${'/current-usage'}">Current Usage</a></li>
+                <li><a th:href="${'/usage-logs'}">Usage Logs</a></li>
+                <li><a th:href="${'/usage-stats'}"}>Usage Stats</a></li>
+            </ul>
+        </header>
+
+        <section>
+            <h1>Penn State Learning Factory Personnel Tracking</h1>
+        </section>
+    </div>
+</body>
+</html>

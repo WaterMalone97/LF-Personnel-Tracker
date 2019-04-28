@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LF Personnel Tracker - Usage Logs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+        body{
+            margin: 0;
+            font-family: 'Montserrat', sans-serrif;
+            text-align:center;
+        }
+
+        .container{
+            text-align: center;
+        }
+
+        .logo{
+            width: 237px;
+            height: 100px;
+            margin: 25px;
+        }
+
+        header{
+            display: flex;
+            background-color: #FFFFFF
+        }
+
+        h1{
+            margin: auto;
+            color: black;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 50px 0 50px 5em;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            color: rgb(4,97,193);
+        }
+
+        table {
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 50px;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {background-color: #ccccc0;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <img th:src="@{'images/PSU-learning-factory.jpg'}" alt="Learning Factory Logo" class="logo">
+        <ul class="nav">
+            <li><a th:href="${'/'}">Home</a></li>
+            <li><a th:href="${'/current-usage'}">Current Usage</a></li>
+            <li><a th:href="${'/usage-logs'}">Usage Logs</a></li>
+            <li><a th:href="${'/usage-stats'}"}>Usage Stats</a></li>
+        </ul>
+    </header>
+    <h1>Usage Logs</h1>
+
+    <table class="table table-striped">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Date</th>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.timeIn}"></td>
+            <td th:text="${user.timeOut}"></td>
+            <td th:text="${user.date}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
